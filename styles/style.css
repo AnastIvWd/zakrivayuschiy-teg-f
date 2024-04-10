@@ -227,11 +227,10 @@
 }
 
 .card-buttons {
-  padding-block-start: 24.5px;
-  padding-block-end: 11.5px;
+  padding-block-start: 25px;
+  padding-block-end: 4.5px;
   padding-inline-end: 25px;
-  max-height: 74px;
-  margin-block-end: 13.5px;
+  margin-block-end: 12.5px;
   display: flex;
   justify-content: end;
 }
@@ -256,78 +255,15 @@
   transition: border 0.3s ease;
 }
 
-.like-icon.is-liked .heart {
-  animation: scale 0.3s 0.1s ease-in forwards;
-  transform-origin: center center;
-}
-
-.like-icon .contour {
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--main-body-color);
-  transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon:not(.is-liked) .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-} 
-
-.like-icon .main-body {
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--main-body-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--main-body-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon .core {
-  transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--main-body-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--main-body-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon .sparks {
-  opacity: 0;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks 0.3s 0.3s ease-in forwards;
-}
-
 .card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   font-family: var(--accent-font-family), fantasy;
-  line-height: 90%;
+  height: 38px;
+  width: 130px;
   font-size: 14px;
-  padding-inline-start: 35px;
-  padding-inline-end: 35px;
   border: 2px solid var(--accent-color);
   cursor: pointer;
   position: relative;
@@ -365,7 +301,6 @@
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
-  margin-top: 50px;
 }
 
 .footer {
@@ -450,7 +385,7 @@
 }
 
 .footer-dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .footer-dialog:focus {
@@ -468,7 +403,7 @@
 
 .floppy-agree {
   margin-block-start: 30px;
-  inline-size: 293px;
+  inline-size: 291px;
   block-size: 38px;
   appearance: none;
   -webkit-appearance: none;
@@ -486,6 +421,35 @@
   outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
   transition: box-shadow 0.3s ease;
+}
+
+.floppy-agree-ok {
+  position: relative;
+}
+
+.floppy-agree::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.floppy-agree:hover::after {
+  transform: scaleX(1);
+}
+
+.floppy-agree-text {
+  padding-inline-start: 8px;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--color-button);
 }
 
 @media (width <= 375px) {
@@ -525,9 +489,3 @@
     inline-size: 257px;
   }
 }
-
-
-
-
-
-
